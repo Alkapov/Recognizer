@@ -1,11 +1,10 @@
 #pragma once
-#include <string>
-using namespace std;
+
 class Recognizer
 {
     string Read(string fileName);
 public:
-    Recognizer();
+    Recognizer();                     
     void Run();
     ~Recognizer();
 };

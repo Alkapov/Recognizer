@@ -2,15 +2,14 @@
 
 #include "Enums.h"
 #include "Models.h"
-#include <vector>
-#include <string>
-using namespace std;
 
+using namespace std;
+ 
 
 class LexicalUnit
 {
 public:
-    vector<string> Analize(vector<Atom> sequence);
+    vector<LexicalToken> Analize(vector<Atom> & sequence, SequenceStatus & status);
     LexicalUnit();
     ~LexicalUnit();
 };

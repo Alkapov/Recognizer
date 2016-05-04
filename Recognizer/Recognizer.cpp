@@ -6,13 +6,20 @@
 #include "Units.h"
 #include "Models.h"
 
-#include <string>
-#include <iostream>
-
 using namespace std;
+
+
+TransliterationUnit transliterationUnit;
+LexicalUnit lexicalUnit;
+IdentificationUnit identificationUnit;
+SyntaxUnit syntaxUnit;
 
 Recognizer::Recognizer()
 {
+    transliterationUnit = TransliterationUnit();
+    lexicalUnit = LexicalUnit();
+    identificationUnit = IdentificationUnit();
+    syntaxUnit = SyntaxUnit();
 }
 
 string Recognizer::Read(string fileName)
@@ -34,14 +41,28 @@ void test()
     {
         string el;
         getline(cin, el);
-        vector<string> ss = LexicalUnit().Analize(TransliterationUnit().Parse(el));
+      //  vector<string> ss = LexicalUnit().Analize(TransliterationUnit().Parse(el));
 
-        cout << el << endl;
-        for (int j = 0; j < ss.size(); ++j)
+ /*       cout << el << endl;
+        for (int j = 0; j < ss.size(); ++j)                  
             cout << j << ": " << ss[j] << endl;
-        cout << "-------------------------------" << endl;
+        cout << "-------------------------------" << endl;*/
     }
 }
+
+bool Check(string & input)
+{
+    Sequence sequence(input);
+    sequence.initTransliterationUnit(transliterationUnit);
+    sequence.initLexicalUnit(lexicalUnit);
+    sequence.initIdentificationUnit(identificationUnit);
+    sequence.initSyntaxUnit(syntaxUnit);
+    if (sequence.getStatus() == SequenceStatus::Accepted)
+        return true;
+    else
+        return false;
+}
+
 void Recognizer::Run()
 {
     test();

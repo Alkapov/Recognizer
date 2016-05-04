@@ -12,7 +12,7 @@ SequenceStatus Sequence::getStatus()
 }
 void Sequence::setStatus(SequenceStatus status)
 {
-    this->Status = status;
+    this->Status = status;    
 }
 string Sequence::getSource()
 {
@@ -20,10 +20,8 @@ string Sequence::getSource()
 }
 void Sequence::initTransliterationUnit(TransliterationUnit & unit)
 {
-    this->Atoms = unit.Parse(this->Source);
+    this->Atoms = unit.Parse(this->Source, this->Status);  
 }
-
-
 
 Sequence::~Sequence()
 {

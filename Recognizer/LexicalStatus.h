@@ -1,23 +1,20 @@
 #pragma once
 
 enum LexicalStatus
-{
-    Start, 
-    Keyword, 
-    Space1, 
-    Space2, 
-    Space3, 
-    Space4, 
-    Space5, 
-    Identifier, 
-    Equally, 
-    StringValue, 
-    SignValue, 
-    IdentifierValue, 
-    ApostropheValue, 
-    HexNumeric, 
-    DecimalNumeric, 
-    ExpNumeric, 
-    ExpSign, 
+{             
+    Start,
+    Keyword,
+    WhiteSpace1,
+    Identifier,
+    WhiteSpace2,
+    UndenifiedValue,
+    StringValue,
+    UndenifiedNumericValue,
+    NumericValue1,
+    NumericValue2,
+    HexValue,
+    ExponentValue1,
+    ExponentValue2,
+    Semicolon,
     Finish
 };

@@ -1,9 +1,9 @@
 #pragma once
-#include <string>
-#include <vector>
+
 #include "Enums.h"
 #include "Models.h"
 #include "Units.h"
+#include "stdafx.h"
 using namespace std;
 
 class Sequence
@@ -14,7 +14,7 @@ class Sequence
     vector<LexicalToken> LexicalTokens;
 
 public:
-    Sequence(string source);
+    Sequence(string source);                           
     string getSource();
     SequenceStatus getStatus();
     void setStatus(SequenceStatus status);

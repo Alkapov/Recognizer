@@ -2,7 +2,7 @@
 class SyntaxUnit
 {
 public:
-    SyntaxUnit();
+    SyntaxUnit();                    
     ~SyntaxUnit();
 };
 

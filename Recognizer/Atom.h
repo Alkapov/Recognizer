@@ -4,9 +4,9 @@ class Atom
 {
 public:
     char symbol = '0';
-    TransliterationType type = Letter;
+    TransliterationType type;
     Atom(char ch, TransliterationType type);
     Atom();
     ~Atom();
-};
+};              
 
