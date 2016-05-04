@@ -1,0 +1,8 @@
+7
+const Error= $FFFF;
+const Eps=1E-3;
+const OneHndNeg=-100;
+const Str='0123456789abcdefgh';
+const Ch='b;
+Str='0123456789abcdefgh';
+Const he = hello world;

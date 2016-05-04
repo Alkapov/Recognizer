@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы исходного кода">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Enums">
+      <UniqueIdentifier>{749759e3-7ddf-4c61-befc-44c22633a1e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Utils">
+      <UniqueIdentifier>{4cd25f90-6ea9-4d4b-b6cd-d2c28ef35a1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Utils">
+      <UniqueIdentifier>{3f92ddc9-bf23-4e46-a640-89227f2dbd85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Заголовочные файлы\Models">
+      <UniqueIdentifier>{90ea0222-4a43-43f0-8a9f-836d96aeba64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы исходного кода\Models">
+      <UniqueIdentifier>{80e1c899-0a5d-4ad7-aee7-465aca4e3f4a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TransliterationType.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="LexicalUnit.h">
+      <Filter>Заголовочные файлы\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TransliterationUnit.h">
+      <Filter>Заголовочные файлы\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentificationUnit.h">
+      <Filter>Заголовочные файлы\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="SyntaxUnit.h">
+      <Filter>Заголовочные файлы\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Units.h">
+      <Filter>Заголовочные файлы\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Recognizer.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Models.h">
+      <Filter>Заголовочные файлы\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Atom.h">
+      <Filter>Заголовочные файлы\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="LexicalStatus.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Sequence.h">
+      <Filter>Заголовочные файлы\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="SequenceStatus.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="LexicalToken.h">
+      <Filter>Заголовочные файлы\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="LexicalType.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Program.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="TransliterationUnit.cpp">
+      <Filter>Файлы исходного кода\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="LexicalUnit.cpp">
+      <Filter>Файлы исходного кода\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentificationUnit.cpp">
+      <Filter>Файлы исходного кода\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SyntaxUnit.cpp">
+      <Filter>Файлы исходного кода\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Recognizer.cpp">
+      <Filter>Файлы исходного кода\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Atom.cpp">
+      <Filter>Файлы исходного кода\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="Sequence.cpp">
+      <Filter>Файлы исходного кода\Models</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
