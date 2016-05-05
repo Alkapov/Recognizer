@@ -75,6 +75,12 @@
     <ClInclude Include="LexicalType.h">
       <Filter>Заголовочные файлы\Enums</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="SyntaxStatus.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Program.cpp">

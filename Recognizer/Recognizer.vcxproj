@@ -162,6 +162,8 @@
     <ClInclude Include="Models.h" />
     <ClInclude Include="Atom.h" />
     <ClInclude Include="Sequence.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SyntaxStatus.h" />
     <ClInclude Include="SyntaxUnit.h" />
     <ClInclude Include="TransliterationType.h" />
     <ClInclude Include="Recognizer.h" />
