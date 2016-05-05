@@ -9,45 +9,45 @@ SyntaxUnit::SyntaxUnit()
 
 void SyntaxUnit::Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus & status)
 {
-    SyntaxStatus condition = SyntaxStatus::ConstKeyword;
+    SyntaxStatus condition = SyntaxStatus::SyntaxConstKeyword;
     for (vector<LexicalToken>::iterator i = lexicalTokens.begin(); i != lexicalTokens.end() && status != SequenceStatus::Rejected; ++i)
         switch (condition)
         {
-        case ConstKeyword:
+        case SyntaxStatus::SyntaxConstKeyword:
             if (i->type == LexicalType::KeywordConst)
-                condition = SyntaxStatus::Identifier;
+                condition = SyntaxStatus::SyntaxIdentifier;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case Identifier:
+        case SyntaxStatus::SyntaxIdentifier:
             if (i->type == LexicalType::Identifier)
-                condition = SyntaxStatus::Equal;
+                condition = SyntaxStatus::SyntaxEqual;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case Equal:
+        case SyntaxStatus::SyntaxEqual:
             if (i->type == LexicalType::Equal)
-                condition = SyntaxStatus::Value;
+                condition = SyntaxStatus::SyntaxValue;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case Value:
+        case SyntaxStatus::SyntaxValue:
             if (i->type == LexicalType::ValueDecimalNumber || i->type == LexicalType::ValueExponentNumber || i->type == LexicalType::ValueFloatNumber || i->type == LexicalType::ValueHexNumber || i->type == LexicalType::ValueString)
-                condition = SyntaxStatus::Semicolon;
+                condition = SyntaxStatus::SyntaxSemicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case Semicolon: 
+        case SyntaxStatus::SyntaxSemicolon: 
             if (i->type == LexicalType::Semicolon)
-                condition = SyntaxStatus::Finish;
+                condition = SyntaxStatus::SyntaxFinish;
             else    
                 status = SequenceStatus::Rejected;
             break;
-        case Finish:
+        case SyntaxStatus::SyntaxFinish:
             status = SequenceStatus::Rejected;
             break;
         }
-    if (condition == SyntaxStatus::Finish)
+    if (condition == SyntaxStatus::SyntaxFinish)
         status = SequenceStatus::Accepted;
     else
         status = SequenceStatus::Rejected;

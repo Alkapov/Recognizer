@@ -107,5 +107,8 @@
     <ClCompile Include="Sequence.cpp">
       <Filter>Файлы исходного кода\Models</Filter>
     </ClCompile>
+    <ClCompile Include="LexicalToken.cpp">
+      <Filter>Файлы исходного кода\Models</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

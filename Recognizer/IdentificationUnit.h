@@ -2,6 +2,9 @@
 #include "stdafx.h"
 #include "Enums.h"
 #include "Models.h"
+#include "Units.h"
+
+#include "LexicalToken.h"
 
 class IdentificationUnit
 {

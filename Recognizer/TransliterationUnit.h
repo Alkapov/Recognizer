@@ -1,15 +1,12 @@
 #pragma once
 
 #include "Atom.h"
-
-
-                                       
-using namespace std;
+#include "stdafx.h"
 
 class TransliterationUnit
 {
 public:
-    std::vector<Atom> Parse(string & input, SequenceStatus & status);
+    vector<Atom> Parse(string & input, SequenceStatus & status);
     TransliterationUnit();
     ~TransliterationUnit();
 };

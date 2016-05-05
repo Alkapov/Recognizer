@@ -3,6 +3,8 @@
 #include "Enums.h"
 #include "Models.h"
 
+#include "LexicalToken.h"
+
 using namespace std;
  
 

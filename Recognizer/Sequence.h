@@ -4,6 +4,9 @@
 #include "Models.h"
 #include "Units.h"
 #include "stdafx.h"
+
+#include "LexicalToken.h"
+
 using namespace std;
 
 class Sequence

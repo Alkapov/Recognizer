@@ -2,19 +2,19 @@
 
 enum LexicalStatus
 {             
-    Start,
-    Keyword,
-    WhiteSpace1,
-    Identifier,
-    WhiteSpace2,
-    UndenifiedValue,
-    StringValue,
-    UndenifiedNumericValue,
-    NumericValue1,
-    NumericValue2,
-    HexValue,
-    ExponentValue1,
-    ExponentValue2,
-    Semicolon,
-    Finish
+    LexicalStart,
+    LexicalKeyword,
+    LexicalWhiteSpace1,
+    LexicalIdentifier,
+    LexicalWhiteSpace2,
+    LexicalUndenifiedValue,
+    LexicalStringValue,
+    LexicalUndenifiedNumericValue,
+    LexicalNumericValue1,
+    LexicalNumericValue2,
+    LexicalHexValue,
+    LexicalExponentValue1,
+    LexicalExponentValue2,
+    LexicalSemicolon,
+    LexicalFinish
 };

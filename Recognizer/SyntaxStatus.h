@@ -2,10 +2,10 @@
 
 enum SyntaxStatus
 {
-    ConstKeyword,
-    Identifier,
-    Equal,
-    Value,
-    Semicolon,
-    Finish
+    SyntaxConstKeyword,
+    SyntaxIdentifier,
+    SyntaxEqual,
+    SyntaxValue,
+    SyntaxSemicolon,
+    SyntaxFinish
 };
