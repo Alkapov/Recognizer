@@ -1,11 +1,16 @@
 #pragma once
+#include "stdafx.h"
 
 class Recognizer
 {
-    string Read(string fileName);
+    TransliterationUnit transliterationUnit;
+    LexicalUnit lexicalUnit;
+    IdentificationUnit identificationUnit;
+    SyntaxUnit syntaxUnit;
+
 public:
     Recognizer();                     
-    void Run();
+    bool Check(string input);
     ~Recognizer();
 };
 

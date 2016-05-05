@@ -1,7 +1,8 @@
 #pragma once
 
-struct LexicalToken
+class LexicalToken
 {
+public:
     string value = "";
     LexicalType type;
     LexicalToken()

@@ -11,6 +11,7 @@ enum LexicalType
     Semicolon,
     ValueString,
     ValueFloatNumber,
+
     KeywordAnd, 
     KeywordEnd, 
     KeywordNil, 

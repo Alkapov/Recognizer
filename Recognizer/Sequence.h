@@ -8,20 +8,26 @@ using namespace std;
 
 class Sequence
 {
-    string Source;
+    string Source = "";
     SequenceStatus Status = SequenceStatus::Unidentified;
     vector<Atom> Atoms;
     vector<LexicalToken> LexicalTokens;
 
-public:
-    Sequence(string source);                           
-    string getSource();
-    SequenceStatus getStatus();
-    void setStatus(SequenceStatus status);
     void initTransliterationUnit(TransliterationUnit & unit);
     void initLexicalUnit(LexicalUnit & unit);
     void initIdentificationUnit(IdentificationUnit & unit);
     void initSyntaxUnit(SyntaxUnit & unit);
+
+public:
+
+
+    Sequence(string source);
+    string getSource();
+    SequenceStatus getStatus();
+    bool isAcceptable();
+
+    void init(TransliterationUnit & TUnit, LexicalUnit & LUnit, IdentificationUnit & IUnit, SyntaxUnit & SUnit);
+
     ~Sequence();
 };
 
