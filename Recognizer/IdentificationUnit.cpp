@@ -50,6 +50,7 @@ LexicalType IdentificationUnit::Identificate(LexicalToken token)
 void IdentificationUnit::Identification(vector<LexicalToken> & lexicalTokens, SequenceStatus & status)
 {
 #if _DEBUG
+
     printf("\nModule: IdentificationUnit.cpp\n");
     printf("   Input status: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
 #endif
@@ -60,6 +61,7 @@ void IdentificationUnit::Identification(vector<LexicalToken> & lexicalTokens, Se
             if (Identificate(*i) != LexicalType::NoKeyword)
                 status = Rejected;
 #if _DEBUG
+    //TODO: Delme 
 
 #define stringify( name ) # name
     const char * names[]

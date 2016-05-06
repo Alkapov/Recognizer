@@ -1,10 +1,10 @@
 #include "LexicalToken.h"
 
 
-LexicalToken::LexicalToken()
-{
+LexicalToken::LexicalToken(): type() {
 
 }
+
 LexicalToken::~LexicalToken()
 {
 

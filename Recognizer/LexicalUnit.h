@@ -12,7 +12,7 @@ using namespace std;
 class LexicalUnit
 {
 public:
-    vector<LexicalToken> Analize(vector<Atom> & sequence, SequenceStatus & status);
+    static vector<LexicalToken> Analize(vector<Atom> & sequence, SequenceStatus & status);
     LexicalUnit();
     ~LexicalUnit();
 };

@@ -153,6 +153,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
 #if _DEBUG
 
 #define stringify( name ) # name
+        //TODO: Delme 
+
     const char * names[]
     {
         stringify(Keyword),
