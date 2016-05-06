@@ -1,11 +1,9 @@
 #pragma once
 
-#include "Enums.h"
-#include "Models.h"
-#include "Units.h"
 #include "stdafx.h"
-
 #include "LexicalToken.h"
+#include "Recognizer.h"   
+#include "SequenceStatus.h"
 
 using namespace std;
 
@@ -25,10 +23,9 @@ public:
 
 
     Sequence(string source);
-    string getSource();
-    SequenceStatus getStatus();
-    bool isAcceptable();
-
+    string getSource() const;
+    SequenceStatus getStatus() const;
+    bool isAcceptable() const;
     void init(TransliterationUnit & TUnit, LexicalUnit & LUnit, IdentificationUnit & IUnit, SyntaxUnit & SUnit);
 
     ~Sequence();

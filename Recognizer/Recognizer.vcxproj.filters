@@ -42,20 +42,11 @@
     <ClInclude Include="IdentificationUnit.h">
       <Filter>Заголовочные файлы\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Enums.h">
-      <Filter>Заголовочные файлы\Enums</Filter>
-    </ClInclude>
     <ClInclude Include="SyntaxUnit.h">
-      <Filter>Заголовочные файлы\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Units.h">
       <Filter>Заголовочные файлы\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Recognizer.h">
       <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="Models.h">
-      <Filter>Заголовочные файлы\Models</Filter>
     </ClInclude>
     <ClInclude Include="Atom.h">
       <Filter>Заголовочные файлы\Models</Filter>
@@ -110,5 +101,13 @@
     <ClCompile Include="LexicalToken.cpp">
       <Filter>Файлы исходного кода\Models</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
+    <Text Include="output.txt">
+      <Filter>Файлы ресурсов</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,16 +1,23 @@
-#pragma once
+#pragma once 
+
 #include "stdafx.h"
-#include "Units.h"
+#include "TransliterationUnit.h"
+#include "LexicalUnit.h"
+#include "IdentificationUnit.h"
+#include "SyntaxUnit.h"
+
 
 class Recognizer
 {
-    TransliterationUnit transliterationUnit;
-    LexicalUnit lexicalUnit;
-    IdentificationUnit identificationUnit;
-    SyntaxUnit syntaxUnit;
 
 public:
-    Recognizer();                     
+
+    TransliterationUnit transliterationUnit = TransliterationUnit();
+    LexicalUnit lexicalUnit = LexicalUnit();
+    IdentificationUnit identificationUnit = IdentificationUnit();
+    SyntaxUnit syntaxUnit = SyntaxUnit();
+
+    Recognizer();
     bool Check(string input);
     ~Recognizer();
 };

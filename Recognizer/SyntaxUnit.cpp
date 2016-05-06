@@ -1,5 +1,5 @@
 #include "SyntaxUnit.h"
-
+#include "SyntaxStatus.h"
 
 
 SyntaxUnit::SyntaxUnit()
@@ -9,6 +9,10 @@ SyntaxUnit::SyntaxUnit()
 
 void SyntaxUnit::Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus & status)
 {
+#if _DEBUG
+    printf("\nModule: SyntaxUnit.cpp\n");
+    printf("   Input status: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
+#endif
     SyntaxStatus condition = SyntaxStatus::SyntaxConstKeyword;
     for (vector<LexicalToken>::iterator i = lexicalTokens.begin(); i != lexicalTokens.end() && status != SequenceStatus::Rejected; ++i)
         switch (condition)
@@ -51,6 +55,10 @@ void SyntaxUnit::Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus
         status = SequenceStatus::Accepted;
     else
         status = SequenceStatus::Rejected;
+#if _DEBUG
+    printf("   Result: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
+#endif
+
 }
 
 

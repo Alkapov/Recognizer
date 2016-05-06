@@ -153,14 +153,12 @@
     <ClCompile Include="TransliterationUnit.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Enums.h" />
     <ClInclude Include="LexicalToken.h" />
     <ClInclude Include="LexicalType.h" />
     <ClInclude Include="SequenceStatus.h" />
     <ClInclude Include="IdentificationUnit.h" />
     <ClInclude Include="LexicalStatus.h" />
     <ClInclude Include="LexicalUnit.h" />
-    <ClInclude Include="Models.h" />
     <ClInclude Include="Atom.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="stdafx.h" />
@@ -169,7 +167,10 @@
     <ClInclude Include="TransliterationType.h" />
     <ClInclude Include="Recognizer.h" />
     <ClInclude Include="TransliterationUnit.h" />
-    <ClInclude Include="Units.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+    <Text Include="output.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,57 +1,19 @@
+--------------------------------------------------
+Testing sequence "﻿const            d           =          'er'        ;"
 
+Module: TransliterationUnit.cpp
+   Input status: Unidentified
+   Output status: Rejected
 
--------------------------------
-const Error= $FFFF;
-0: const
-1:  
-2: Error
-3: =
-4:  
-5: $FFFF
-6: ;
--------------------------------
-const Eps=1E-3;
-0: const
-1:  
-2: Eps
-3: =
-4: 1E-3
-5: ;
--------------------------------
-const OneHndNeg=-100;
-0: const
-1:  
-2: OneHndNeg
-3: =
-4: -
-5: 100
-6: ;
--------------------------------
-const Str='0123456789abcdefgh';
-0: const
-1:  
-2: Str
-3: =
-4: '0123456789abcdefgh'
-5: ;
--------------------------------
-const Ch='b;
-0: const
-1:  
-2: Ch
-3: =
-4: 'b;
--------------------------------
-Str='0123456789abcdefgh';
-0: Str
--------------------------------
-Const he = hello world;
-0: Const
-1:  
-2: he
-3:  
-4: =
-5:  
-6: hello
-7:  
--------------------------------
+Module: LexicalUnit.cpp
+   Input status: Rejected
+   Output status: Rejected
+
+Module: IdentificationUnit.cpp
+   Input status: Rejected
+   Output status: Rejected
+
+Module: SyntaxUnit.cpp
+   Input status: Rejected
+   Result: Rejected
+Rejected

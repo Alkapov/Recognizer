@@ -1,5 +1,6 @@
 #pragma once
-#include "Enums.h"
+#include "TransliterationType.h"
+
 class Atom
 {
 public:

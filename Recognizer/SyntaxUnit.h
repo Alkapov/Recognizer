@@ -1,8 +1,8 @@
 #pragma once
 
 #include "stdafx.h"
-#include "Enums.h"
-#include "Models.h"
+#include "LexicalToken.h"
+#include "SequenceStatus.h"
 
 class SyntaxUnit
 {

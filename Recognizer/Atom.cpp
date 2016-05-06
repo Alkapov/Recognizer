@@ -10,6 +10,7 @@ Atom::Atom(char ch, TransliterationType type)
 
 Atom::Atom()
 {
+
 }
 
 Atom::~Atom()

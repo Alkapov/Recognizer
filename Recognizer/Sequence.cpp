@@ -3,6 +3,10 @@
 
 void Sequence::init(TransliterationUnit & TUnit, LexicalUnit & LUnit, IdentificationUnit & IUnit, SyntaxUnit & SUnit)
 {
+#if _DEBUG
+    printf("--------------------------------------------------\n");
+    printf("Testing sequence \"%s\"\n", (this->Source).c_str());
+#endif
     this->initTransliterationUnit(TUnit);
     this->initLexicalUnit(LUnit);
     this->initIdentificationUnit(IUnit);
@@ -12,15 +16,16 @@ Sequence::Sequence(string source)
 {
     this->Source = source;
 }
-SequenceStatus Sequence::getStatus()
+SequenceStatus Sequence::getStatus() const
 {
     return this->Status;
 }
-bool Sequence::isAcceptable()
+bool Sequence::isAcceptable() const
 {
     return this->Status == SequenceStatus::Accepted;
 }
-string Sequence::getSource()
+
+string Sequence::getSource() const
 {
     return this->Source;
 }

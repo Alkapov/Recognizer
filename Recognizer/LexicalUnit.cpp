@@ -1,4 +1,6 @@
 #include "LexicalUnit.h"
+#include "LexicalStatus.h"
+#include "LexicalType.h"
 
 LexicalUnit::LexicalUnit()
 {
@@ -9,6 +11,10 @@ LexicalUnit::LexicalUnit()
 
 vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatus & status)
 {
+#if _DEBUG
+    printf("\nModule: LexicalUnit.cpp\n");
+    printf("   Input status: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
+#endif
     vector<LexicalToken> lexicalTokens(1);
     LexicalStatus condition = LexicalStatus::LexicalStart;
     for (vector<Atom>::iterator i = sequence.begin(); i != sequence.end() && status != SequenceStatus::Rejected; ++i)
@@ -32,7 +38,7 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
             break;
         case LexicalStatus::LexicalWhiteSpace1:
             if (i->type == TransliterationType::SignExponent || i->type == TransliterationType::SignHexLetter || i->type == TransliterationType::SignLetter)
-                lexicalTokens.back().type = LexicalType::Identifier, lexicalTokens.back().value.push_back(i->symbol);
+               condition = LexicalIdentifier, lexicalTokens.back().type = LexicalType::Identifier, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignWhiteSpace)
                 continue;
             else
@@ -107,7 +113,7 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 status = SequenceStatus::Rejected;
             break;
         case LexicalStatus::LexicalHexValue:
-            if (i->type == TransliterationType::SignExponent || i->type == TransliterationType::SignLetter || i->type == TransliterationType::SignNumeric)
+            if (i->type == TransliterationType::SignExponent || i->type == TransliterationType::SignNumeric || i->type == TransliterationType::SignHexLetter)
                 condition = LexicalStatus::LexicalHexValue, lexicalTokens.back().type = LexicalType::ValueHexNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignSemicolon)
                 condition = LexicalStatus::LexicalFinish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
@@ -131,6 +137,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 status = SequenceStatus::Rejected;
             break;
         case LexicalStatus::LexicalSemicolon:
+            if(i->type == TransliterationType::SignWhiteSpace)
+                continue;;
             if (i->type == TransliterationType::SignSemicolon)
                 condition = LexicalStatus::LexicalFinish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
             else
@@ -141,7 +149,66 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 status = SequenceStatus::Rejected;
             break;
         }
-        return lexicalTokens;
+
+#if _DEBUG
+
+#define stringify( name ) # name
+    const char * names[]
+    {
+        stringify(Keyword),
+        stringify(Identifier),
+        stringify(Equal),
+        stringify(ValueDecimalNumber),
+        stringify(ValueHexNumber),
+        stringify(ValueExponentNumber),
+        stringify(Semicolon),
+        stringify(ValueString),
+        stringify(ValueFloatNumber),
+        stringify(KeywordAnd),
+        stringify(KeywordEnd),
+        stringify(KeywordNil),
+        stringify(KeywordSet),
+        stringify(KeywordArray),
+        stringify(KeywordFile),
+        stringify(KeywordNot),
+        stringify(KeywordThen),
+        stringify(KeywordBegin),
+        stringify(KeywordFor),
+        stringify(KeywordOf),
+        stringify(KeywordTo),
+        stringify(KeywordCase),
+        stringify(KeywordFunction),
+        stringify(KeywordOr),
+        stringify(KeywordType),
+        stringify(KeywordConst),
+        stringify(KeywordGoto),
+        stringify(KeywordPacked),
+        stringify(KeywordUntil),
+        stringify(KeywordDiv),
+        stringify(KeywordIf),
+        stringify(KeywordProcedure),
+        stringify(KeywordVar),
+        stringify(KeywordDo),
+        stringify(KeywordIn),
+        stringify(KeywordProgram),
+        stringify(KeywordWhile),
+        stringify(KeywordDownto),
+        stringify(KeywordLabel),
+        stringify(KeywordRecord),
+        stringify(KeywordWith),
+        stringify(KeywordElse),
+        stringify(KeywordMod),
+        stringify(KeywordRepeat),
+        stringify(NoKeyword)
+    };
+    if (lexicalTokens.size()> 1)
+        for (int i = 0; i < lexicalTokens.size(); ++i)
+            cout << "      Token " << i + 1 << " = (" << lexicalTokens[i].value << ", " << names[lexicalTokens[i].type] << ")\n";
+    cout << "   Output status: " << (status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Undenified")) << "\n";
+
+#endif
+
+    return lexicalTokens;
 }
 
 LexicalUnit::~LexicalUnit()

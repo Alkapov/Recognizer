@@ -1,15 +1,19 @@
 #include "TransliterationUnit.h"
-#include "stdafx.h"
-#include "Enums.h"
-#include "Models.h"
+
 
 TransliterationUnit::TransliterationUnit()
 {
                                   
 }
 
+
 std::vector<Atom> TransliterationUnit::Parse(string & input, SequenceStatus & status)
 {
+#if _DEBUG
+    printf("\nModule: TransliterationUnit.cpp\n");
+    printf("   Input status: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
+#endif
+
     vector<Atom> sequence;
     if (status != SequenceStatus::Rejected)
         for (int i = 0; i < input.size() && status != SequenceStatus::Rejected; ++i)
@@ -39,6 +43,30 @@ std::vector<Atom> TransliterationUnit::Parse(string & input, SequenceStatus & st
                 sequence.push_back(Atom(input[i], TransliterationType::SignPoint));
             else
                 status = SequenceStatus::Rejected;
+#if _DEBUG
+    #define stringify( name ) # name
+    const char * names[]
+    {
+        stringify(SignExponent),
+        stringify(SignHexLetter),
+        stringify(SignLetter),
+        stringify(SignNumeric),
+        stringify(SignDollar),
+        stringify(SignApostrophe),
+        stringify(SignSemicolon),
+        stringify(SignUnderscope),
+        stringify(SignPM),
+        stringify(SignWhiteSpace),
+        stringify(SignEqual),
+        stringify(SignPoint),
+        stringify(SignError)
+    };
+    
+    for (int i = 0; i < sequence.size(); ++i)
+        printf("      Atom %d = (%c, %s)\n", i + 1, sequence[i].symbol, names[sequence[i].type]);
+    printf("   Output status: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Undenified"));
+
+#endif
     return sequence;
 }
 

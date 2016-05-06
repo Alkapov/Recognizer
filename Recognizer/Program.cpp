@@ -5,7 +5,7 @@
 vector<string> ReadSequence(string fileName)
 {
     vector<string> sequences;
-    std::ifstream file("Read.txt");
+    std::ifstream file(fileName);
     std::string str;
     while (std::getline(file, str))
         sequences.push_back(str);
@@ -15,6 +15,8 @@ vector<string> ReadSequence(string fileName)
 
 int main()
 {
+
+
     freopen("output.txt", "w", stdout);
     Recognizer recognizer;
     vector<string> source = ReadSequence("input.txt");

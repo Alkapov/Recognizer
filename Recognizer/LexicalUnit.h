@@ -1,9 +1,10 @@
 #pragma once
 
-#include "Enums.h"
-#include "Models.h"
+
 
 #include "LexicalToken.h"
+#include "Atom.h"
+#include "SequenceStatus.h"
 
 using namespace std;
  

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "stdafx.h"
-#include "Enums.h"
+#include "LexicalType.h"
 
 class LexicalToken
 {

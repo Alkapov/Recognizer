@@ -1,5 +1,5 @@
+ 
 #pragma once
-
 enum LexicalStatus
 {             
     LexicalStart,
