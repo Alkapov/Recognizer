@@ -10,7 +10,7 @@ using namespace std;
 class Sequence
 {
     string Source = "";
-    SequenceStatus Status = SequenceStatus::Unidentified;
+    SequenceStatus::SequenceStatus Status = SequenceStatus::Unidentified;
     vector<Atom> Atoms;
     vector<LexicalToken> LexicalTokens;
 
@@ -21,10 +21,9 @@ class Sequence
 
 public:
 
-
     Sequence(string source);
     string getSource() const;
-    SequenceStatus getStatus() const;
+    SequenceStatus::SequenceStatus getStatus() const;
     bool isAcceptable() const;
     void init(TransliterationUnit & TUnit, LexicalUnit & LUnit, IdentificationUnit & IUnit, SyntaxUnit & SUnit);
 

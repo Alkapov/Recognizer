@@ -7,7 +7,7 @@
 class SyntaxUnit
 {
 public:
-    static void Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus & status);
+    static void Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus::SequenceStatus & status);
     SyntaxUnit();                    
     ~SyntaxUnit();
 };

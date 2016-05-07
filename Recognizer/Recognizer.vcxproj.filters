@@ -28,6 +28,9 @@
     <Filter Include="Файлы исходного кода\Models">
       <UniqueIdentifier>{80e1c899-0a5d-4ad7-aee7-465aca4e3f4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\Test">
+      <UniqueIdentifier>{565485df-5d21-44f8-b28f-8e1d3ec640bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TransliterationType.h">
@@ -51,9 +54,6 @@
     <ClInclude Include="Atom.h">
       <Filter>Заголовочные файлы\Models</Filter>
     </ClInclude>
-    <ClInclude Include="LexicalStatus.h">
-      <Filter>Заголовочные файлы\Enums</Filter>
-    </ClInclude>
     <ClInclude Include="Sequence.h">
       <Filter>Заголовочные файлы\Models</Filter>
     </ClInclude>
@@ -69,7 +69,13 @@
     <ClInclude Include="stdafx.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="SyntaxStatus.h">
+    <ClInclude Include="Test.h">
+      <Filter>Заголовочные файлы\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="LexicalState.h">
+      <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="SyntaxState.h">
       <Filter>Заголовочные файлы\Enums</Filter>
     </ClInclude>
   </ItemGroup>

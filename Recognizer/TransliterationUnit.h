@@ -8,7 +8,7 @@
 class TransliterationUnit
 {
 public:
-    vector<Atom> Parse(string & input, SequenceStatus & status);
+    static vector<Atom> Parse(string & input, SequenceStatus::SequenceStatus & status);
     TransliterationUnit();
     ~TransliterationUnit();
 };

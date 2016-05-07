@@ -1,18 +1,42 @@
 #pragma once 
 
-enum TransliterationType
-{                 
-    SignExponent,
-    SignHexLetter,
-    SignLetter,
-    SignNumeric,
-    SignDollar,
-    SignApostrophe,
-    SignSemicolon,
-    SignUnderscope,
-    SignPM,
-    SignWhiteSpace,
-    SignEqual,
-    SignPoint,
-    SignError
-};
+#include "stdafx.h"
+
+namespace TransliterationType
+{
+    enum TransliterationType
+    {
+        SignExponent,
+        HexLetter,
+        Letter,
+        Numeric,
+        SignDollar,
+        SignApostrophe,
+        SignSemicolon,
+        SignUnderscope,
+        SignPM,
+        SignWhiteSpace,
+        SignEqual,
+        SignPoint,
+        Error
+    };
+#if _DEBUG
+    const vector<string> toString = 
+    {
+        "SignExponent",
+        "HexLetter",
+        "Letter",
+        "Numeric",
+        "SignDollar",
+        "SignApostrophe",
+        "SignSemicolon",
+        "SignUnderscope",
+        "SignPM",
+        "SignWhiteSpace",
+        "SignEqual",
+        "SignPoint",
+        "Error"
+    };
+#endif
+
+}

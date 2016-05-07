@@ -5,8 +5,8 @@ class Atom
 {
 public:
     char symbol = '0';
-    TransliterationType type;
-    Atom(char ch, TransliterationType type);
+    TransliterationType::TransliterationType type;
+    Atom(char ch, TransliterationType::TransliterationType type);
     Atom();
     ~Atom();
 };              

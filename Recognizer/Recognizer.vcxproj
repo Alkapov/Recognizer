@@ -157,13 +157,14 @@
     <ClInclude Include="LexicalType.h" />
     <ClInclude Include="SequenceStatus.h" />
     <ClInclude Include="IdentificationUnit.h" />
-    <ClInclude Include="LexicalStatus.h" />
+    <ClInclude Include="LexicalState.h" />
     <ClInclude Include="LexicalUnit.h" />
     <ClInclude Include="Atom.h" />
     <ClInclude Include="Sequence.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="SyntaxStatus.h" />
+    <ClInclude Include="SyntaxState.h" />
     <ClInclude Include="SyntaxUnit.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="TransliterationType.h" />
     <ClInclude Include="Recognizer.h" />
     <ClInclude Include="TransliterationUnit.h" />

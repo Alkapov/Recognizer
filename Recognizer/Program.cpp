@@ -1,22 +1,30 @@
 
 #include "Recognizer.h"
-#include "stdafx.h"
 
 vector<string> ReadSequence(string fileName)
 {
     vector<string> sequences;
-    std::ifstream file(fileName);
-    std::string str;
-    while (std::getline(file, str))
+    ifstream file(fileName);
+    string str;
+    while (getline(file, str))
         sequences.push_back(str);
     file.close();
     return sequences;
 }
 
+void clear()
+{
+    freopen("input.txt", "w", stdout);
+    cout << "const real a = 2;" << endl;
+    fclose(stdout);
+}
+
 int main()
 {
+    //TODO: Make division on DEBUG AND REALESE
+    //TODO: Refact enums and so on
 
-
+    //clear();
     freopen("output.txt", "w", stdout);
     Recognizer recognizer;
     vector<string> source = ReadSequence("input.txt");

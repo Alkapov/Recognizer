@@ -1,15 +1,15 @@
 #pragma once
 
-#include "stdafx.h"
 #include "LexicalType.h"
+#include <string>
 
 class LexicalToken
 {
 public:
-    string value = "";
-    LexicalType type;
+    std::string value = "";
+    LexicalType::LexicalType type;
     LexicalToken();
-    LexicalToken(char & value, LexicalType type);
-    LexicalToken(string & value, LexicalType type);
+    LexicalToken(char & value, LexicalType::LexicalType type);
+    LexicalToken(std::string & value, LexicalType::LexicalType type);
     ~LexicalToken();
 };

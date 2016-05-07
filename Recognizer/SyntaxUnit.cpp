@@ -1,62 +1,62 @@
 #include "SyntaxUnit.h"
-#include "SyntaxStatus.h"
+#include "SyntaxState.h"
 
+#include "Test.h"
 
 SyntaxUnit::SyntaxUnit()
 {
 
 }
 
-void SyntaxUnit::Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus & status)
+void SyntaxUnit::Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus::SequenceStatus & status)
 {
 #if _DEBUG
-    printf("\nModule: SyntaxUnit.cpp\n");
-    printf("   Input status: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
+    Test::pushIn<SyntaxUnit>(status);
 #endif
-    SyntaxStatus condition = SyntaxStatus::SyntaxConstKeyword;
+
+    SyntaxState::SyntaxState state = SyntaxState::ConstKeyword;
     for (vector<LexicalToken>::iterator i = lexicalTokens.begin(); i != lexicalTokens.end() && status != SequenceStatus::Rejected; ++i)
-        switch (condition)
+        switch (state)
         {
-        case SyntaxStatus::SyntaxConstKeyword:
+        case SyntaxState::ConstKeyword:
             if (i->type == LexicalType::KeywordConst)
-                condition = SyntaxStatus::SyntaxIdentifier;
+                state = SyntaxState::Identifier;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case SyntaxStatus::SyntaxIdentifier:
+        case SyntaxState::Identifier:
             if (i->type == LexicalType::Identifier)
-                condition = SyntaxStatus::SyntaxEqual;
+                state = SyntaxState::Equal;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case SyntaxStatus::SyntaxEqual:
+        case SyntaxState::Equal:
             if (i->type == LexicalType::Equal)
-                condition = SyntaxStatus::SyntaxValue;
+                state = SyntaxState::Value;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case SyntaxStatus::SyntaxValue:
+        case SyntaxState::Value:
             if (i->type == LexicalType::ValueDecimalNumber || i->type == LexicalType::ValueExponentNumber || i->type == LexicalType::ValueFloatNumber || i->type == LexicalType::ValueHexNumber || i->type == LexicalType::ValueString)
-                condition = SyntaxStatus::SyntaxSemicolon;
+                state = SyntaxState::Semicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case SyntaxStatus::SyntaxSemicolon: 
+        case SyntaxState::Semicolon: 
             if (i->type == LexicalType::Semicolon)
-                condition = SyntaxStatus::SyntaxFinish;
+                state = SyntaxState::Finish;
             else    
                 status = SequenceStatus::Rejected;
             break;
-        case SyntaxStatus::SyntaxFinish:
+        case SyntaxState::Finish:
             status = SequenceStatus::Rejected;
             break;
         }
-    if (condition == SyntaxStatus::SyntaxFinish)
+    if (state == SyntaxState::Finish)
         status = SequenceStatus::Accepted;
     else
         status = SequenceStatus::Rejected;
 #if _DEBUG
-    //TODO: Delme 
 
     printf("   Result: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
 #endif
