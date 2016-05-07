@@ -326,3 +326,617 @@ Module: class IdentificationUnit
 Module: class SyntaxUnit
    Result: Rejected
 Rejected
+--------------------------------------------------
+Testing sequence "const N=10; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (N, HexLetter)
+      Atom 8  = (=, SignEqual)
+      Atom 9  = (1, Numeric)
+      Atom 10  = (0, Numeric)
+      Atom 11  = (;, SignSemicolon)
+      Atom 12  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (N, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, KeywordConst)
+      Token 2 = (N, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class SyntaxUnit
+   Result: Accepted
+Accepted
+--------------------------------------------------
+Testing sequence "const Min=-10; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (M, HexLetter)
+      Atom 8  = (i, HexLetter)
+      Atom 9  = (n, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (-, SignPM)
+      Atom 12  = (1, Numeric)
+      Atom 13  = (0, Numeric)
+      Atom 14  = (;, SignSemicolon)
+      Atom 15  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (-10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, KeywordConst)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (-10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class SyntaxUnit
+   Result: Accepted
+Accepted
+--------------------------------------------------
+Testing sequence "const Max=+10; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (M, HexLetter)
+      Atom 8  = (a, HexLetter)
+      Atom 9  = (x, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (+, SignPM)
+      Atom 12  = (1, Numeric)
+      Atom 13  = (0, Numeric)
+      Atom 14  = (;, SignSemicolon)
+      Atom 15  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Max, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (+10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, KeywordConst)
+      Token 2 = (Max, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (+10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class SyntaxUnit
+   Result: Accepted
+Accepted
+--------------------------------------------------
+Testing sequence "const On=True; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (O, HexLetter)
+      Atom 8  = (n, HexLetter)
+      Atom 9  = (=, SignEqual)
+      Atom 10  = (T, HexLetter)
+      Atom 11  = (r, HexLetter)
+      Atom 12  = (u, HexLetter)
+      Atom 13  = (e, SignExponent)
+      Atom 14  = (;, SignSemicolon)
+      Atom 15  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (On, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (On, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const Off=FALSE; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (O, HexLetter)
+      Atom 8  = (f, HexLetter)
+      Atom 9  = (f, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (F, HexLetter)
+      Atom 12  = (A, HexLetter)
+      Atom 13  = (L, HexLetter)
+      Atom 14  = (S, HexLetter)
+      Atom 15  = (E, SignExponent)
+      Atom 16  = (;, SignSemicolon)
+      Atom 17  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Off, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Off, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const MyMaxN = 123456 ; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (M, HexLetter)
+      Atom 8  = (y, HexLetter)
+      Atom 9  = (M, HexLetter)
+      Atom 10  = (a, HexLetter)
+      Atom 11  = (x, HexLetter)
+      Atom 12  = (N, HexLetter)
+      Atom 13  = ( , SignWhiteSpace)
+      Atom 14  = (=, SignEqual)
+      Atom 15  = ( , SignWhiteSpace)
+      Atom 16  = (1, Numeric)
+      Atom 17  = (2, Numeric)
+      Atom 18  = (3, Numeric)
+      Atom 19  = (4, Numeric)
+      Atom 20  = (5, Numeric)
+      Atom 21  = (6, Numeric)
+      Atom 22  = ( , SignWhiteSpace)
+      Atom 23  = (;, SignSemicolon)
+      Atom 24  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (MyMaxN, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (123456, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (MyMaxN, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (123456, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const N=10 "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (N, HexLetter)
+      Atom 8  = (=, SignEqual)
+      Atom 9  = (1, Numeric)
+      Atom 10  = (0, Numeric)
+      Atom 11  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (N, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (10, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (N, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (10, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const Min=-+10; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (M, HexLetter)
+      Atom 8  = (i, HexLetter)
+      Atom 9  = (n, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (-, SignPM)
+      Atom 12  = (+, SignPM)
+      Atom 13  = (1, Numeric)
+      Atom 14  = (0, Numeric)
+      Atom 15  = (;, SignSemicolon)
+      Atom 16  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (-, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (-, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const Min=-True; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (M, HexLetter)
+      Atom 8  = (i, HexLetter)
+      Atom 9  = (n, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (-, SignPM)
+      Atom 12  = (T, HexLetter)
+      Atom 13  = (r, HexLetter)
+      Atom 14  = (u, HexLetter)
+      Atom 15  = (e, SignExponent)
+      Atom 16  = (;, SignSemicolon)
+      Atom 17  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (-, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (-, ValueDecimalNumber)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const Off=Folse; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (O, HexLetter)
+      Atom 8  = (f, HexLetter)
+      Atom 9  = (f, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (F, HexLetter)
+      Atom 12  = (o, HexLetter)
+      Atom 13  = (l, HexLetter)
+      Atom 14  = (s, HexLetter)
+      Atom 15  = (e, SignExponent)
+      Atom 16  = (;, SignSemicolon)
+      Atom 17  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Off, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Off, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const Min=123.456; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (M, HexLetter)
+      Atom 8  = (i, HexLetter)
+      Atom 9  = (n, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (1, Numeric)
+      Atom 12  = (2, Numeric)
+      Atom 13  = (3, Numeric)
+      Atom 14  = (., SignPoint)
+      Atom 15  = (4, Numeric)
+      Atom 16  = (5, Numeric)
+      Atom 17  = (6, Numeric)
+      Atom 18  = (;, SignSemicolon)
+      Atom 19  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (123.456, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, KeywordConst)
+      Token 2 = (Min, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (123.456, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class SyntaxUnit
+   Result: Accepted
+Accepted
+--------------------------------------------------
+Testing sequence "const N=10; const Min=-10; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (N, HexLetter)
+      Atom 8  = (=, SignEqual)
+      Atom 9  = (1, Numeric)
+      Atom 10  = (0, Numeric)
+      Atom 11  = (;, SignSemicolon)
+      Atom 12  = ( , SignWhiteSpace)
+      Atom 13  = (c, HexLetter)
+      Atom 14  = (o, HexLetter)
+      Atom 15  = (n, HexLetter)
+      Atom 16  = (s, HexLetter)
+      Atom 17  = (t, HexLetter)
+      Atom 18  = ( , SignWhiteSpace)
+      Atom 19  = (M, HexLetter)
+      Atom 20  = (i, HexLetter)
+      Atom 21  = (n, HexLetter)
+      Atom 22  = (=, SignEqual)
+      Atom 23  = (-, SignPM)
+      Atom 24  = (1, Numeric)
+      Atom 25  = (0, Numeric)
+      Atom 26  = (;, SignSemicolon)
+      Atom 27  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (N, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (N, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (10, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const BEGIN=123; "
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (B, HexLetter)
+      Atom 8  = (E, SignExponent)
+      Atom 9  = (G, HexLetter)
+      Atom 10  = (I, HexLetter)
+      Atom 11  = (N, HexLetter)
+      Atom 12  = (=, SignEqual)
+      Atom 13  = (1, Numeric)
+      Atom 14  = (2, Numeric)
+      Atom 15  = (3, Numeric)
+      Atom 16  = (;, SignSemicolon)
+      Atom 17  = ( , SignWhiteSpace)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (BEGIN, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (123, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Unidentified
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, KeywordConst)
+      Token 2 = (BEGIN, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (123, ValueDecimalNumber)
+      Token 5 = (;, Semicolon)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected
+--------------------------------------------------
+Testing sequence "const end=False;"
+
+Module: class TransliterationUnit
+      <Type> # = (<Symbol>, <TransliterationType>)
+      Atom 1  = (c, HexLetter)
+      Atom 2  = (o, HexLetter)
+      Atom 3  = (n, HexLetter)
+      Atom 4  = (s, HexLetter)
+      Atom 5  = (t, HexLetter)
+      Atom 6  = ( , SignWhiteSpace)
+      Atom 7  = (e, SignExponent)
+      Atom 8  = (n, HexLetter)
+      Atom 9  = (d, HexLetter)
+      Atom 10  = (=, SignEqual)
+      Atom 11  = (F, HexLetter)
+      Atom 12  = (a, HexLetter)
+      Atom 13  = (l, HexLetter)
+      Atom 14  = (s, HexLetter)
+      Atom 15  = (e, SignExponent)
+      Atom 16  = (;, SignSemicolon)
+   Output status: Unidentified
+
+Module: class LexicalUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (end, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class IdentificationUnit
+      <Type> # = (<Value>, <LexicalType>)
+      Token 1 = (const, Keyword)
+      Token 2 = (end, Identifier)
+      Token 3 = (=, Equal)
+      Token 4 = (, Keyword)
+   Output status: Rejected
+
+Module: class SyntaxUnit
+   Result: Rejected
+Rejected

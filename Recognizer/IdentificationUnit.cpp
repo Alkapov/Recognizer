@@ -41,9 +41,16 @@ IdentificationUnit::IdentificationUnit()
     this->keywords.insert(make_pair("repeat", LexicalType::KeywordRepeat));
 }
 
+string IdentificationUnit::toLower(string input) const
+{
+    for (int i = 0; i < input.size(); ++i)
+        input[i] = tolower(input[i]);
+    return  input;
+}
+
 LexicalType::LexicalType IdentificationUnit::Identificate(LexicalToken token)
 {
-    if (keywords.find(token.value) != keywords.end())
+    if (keywords.find(toLower(token.value)) != keywords.end())
         return keywords[token.value];
     return LexicalType::NoKeyword;
 }

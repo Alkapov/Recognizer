@@ -41,13 +41,13 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
             break;
         case LexicalState::WhiteSpace1:
             if (i->type == TransliterationType::SignExponent || i->type == TransliterationType::HexLetter || i->type == TransliterationType::Letter)
-               state = LexicalState::LexicalIdentifier, lexicalTokens.back().type = LexicalType::Identifier, lexicalTokens.back().value.push_back(i->symbol);
+               state = LexicalState::Identifier, lexicalTokens.back().type = LexicalType::Identifier, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignWhiteSpace)
                 continue;
             else
                 status = SequenceStatus::Rejected;
             break;
-        case LexicalState::LexicalIdentifier:
+        case LexicalState::Identifier:
             if (i->type == TransliterationType::SignExponent || i->type == TransliterationType::HexLetter || i->type == TransliterationType::Letter || i->type == TransliterationType::Numeric || i->type == TransliterationType::SignUnderscope)
                 lexicalTokens.back().type = LexicalType::Identifier, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignWhiteSpace)

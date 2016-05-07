@@ -5,3 +5,17 @@ const Str='0123456789abcdefgh';
 const Ch='b;
 Str='0123456789abcdefgh';
 Const he = hello world;
+const N=10; 
+const Min=-10; 
+const Max=+10; 
+const On=True; 
+const Off=FALSE; 
+const MyMaxN = 123456 ; 
+const N=10 
+const Min=-+10; 
+const Min=-True; 
+const Off=Folse; 
+const Min=123.456; 
+const N=10; const Min=-10; 
+const BEGIN=123; 
+const end=False;

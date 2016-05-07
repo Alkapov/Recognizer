@@ -9,7 +9,6 @@
 #if _DEBUG
 namespace Test
 {
-
     static vector<string> readTests(string fileName)
     {
         vector<string> sequences;

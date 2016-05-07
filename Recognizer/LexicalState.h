@@ -7,7 +7,7 @@ namespace LexicalState
         Start,
         Keyword,
         WhiteSpace1,
-        LexicalIdentifier,
+        Identifier,
         WhiteSpace2,
         UndenifiedValue,
         StringValue,
