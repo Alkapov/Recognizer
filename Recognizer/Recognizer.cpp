@@ -4,9 +4,6 @@
 
 #include "Test.h"
 
-
-
-
 Recognizer::Recognizer()
 {
 

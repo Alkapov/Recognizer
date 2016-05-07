@@ -1,7 +1,6 @@
 #pragma once
 
 #include "LexicalType.h"
-#include <string>
 
 class LexicalToken
 {

@@ -10,8 +10,6 @@ LexicalUnit::LexicalUnit()
 
 }
 
-
-
 vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatus::SequenceStatus & status)
 {         
 
@@ -156,10 +154,7 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
         }
 
 #if _DEBUG
-      /*  if (lexicalTokens.size()> 1)
-            for (int i = 0; i < lexicalTokens.size(); ++i)
-                printf("      Token %d = (%s ,%s)\n", i + 1, lexicalTokens[i].value.c_str(), LexicalType::names[lexicalTokens[i].type]);
-         Test::pushOut(status);*/
+        Test::pushOut(status, lexicalTokens);
 #endif
 
     return lexicalTokens;
