@@ -19,3 +19,4 @@ const Min=123.456;
 const N=10; const Min=-10; 
 const BEGIN=123; 
 const end=False;
+const a = 001;

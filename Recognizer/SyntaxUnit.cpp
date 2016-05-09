@@ -57,8 +57,8 @@ void SyntaxUnit::Verificate(vector<LexicalToken> & lexicalTokens, SequenceStatus
     else
         status = SequenceStatus::Rejected;
 #if _DEBUG
-
-    printf("   Result: %s\n", status == SequenceStatus::Accepted ? "Accepted" : (status == SequenceStatus::Rejected ? "Rejected" : "Unidentified"));
+    Test::pushOut(status);
+   
 #endif
 
 }

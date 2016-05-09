@@ -48,9 +48,6 @@
     <ClInclude Include="SyntaxUnit.h">
       <Filter>Заголовочные файлы\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Recognizer.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Atom.h">
       <Filter>Заголовочные файлы\Models</Filter>
     </ClInclude>
@@ -77,6 +74,9 @@
     </ClInclude>
     <ClInclude Include="SyntaxState.h">
       <Filter>Заголовочные файлы\Enums</Filter>
+    </ClInclude>
+    <ClInclude Include="Recognizer.h">
+      <Filter>Заголовочные файлы\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

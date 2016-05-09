@@ -53,7 +53,7 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
             else if (i->type == TransliterationType::SignWhiteSpace)
                 state = LexicalState::WhiteSpace2;
             else if (i->type == TransliterationType::SignEqual)
-                state = LexicalState::UndenifiedValue, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Equal)), lexicalTokens.push_back(LexicalToken());
+                state = LexicalState::UnidentifiedValue, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Equal)), lexicalTokens.push_back(LexicalToken());
             else
                 status = SequenceStatus::Rejected;
             break;
@@ -61,11 +61,11 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
             if (i->type == TransliterationType::SignWhiteSpace)
                 continue;
             else if (i->type == TransliterationType::SignEqual)
-                state = LexicalState::UndenifiedValue, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Equal)), lexicalTokens.push_back(LexicalToken());
+                state = LexicalState::UnidentifiedValue, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Equal)), lexicalTokens.push_back(LexicalToken());
             else
                 status = SequenceStatus::Rejected;
             break;
-        case LexicalState::UndenifiedValue:
+        case LexicalState::UnidentifiedValue:
             if (i->type == TransliterationType::Numeric)
                 state = LexicalState::NumericValue1, lexicalTokens.back().type = LexicalType::ValueDecimalNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignDollar)
@@ -73,7 +73,7 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
             else if (i->type == TransliterationType::SignApostrophe)
                 state = LexicalState::StringValue, lexicalTokens.back().type = LexicalType::ValueString, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignPM)
-                state = LexicalState::UndenifiedNumericValue, lexicalTokens.back().type = LexicalType::ValueDecimalNumber, lexicalTokens.back().value.push_back(i->symbol);
+                state = LexicalState::UnidentifiedNumericValue, lexicalTokens.back().type = LexicalType::ValueDecimalNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignWhiteSpace)
                 continue;
             else
@@ -85,7 +85,7 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
             else
                 lexicalTokens.back().type = LexicalType::ValueString, lexicalTokens.back().value.push_back(i->symbol);
             break;
-        case LexicalState::UndenifiedNumericValue:
+        case LexicalState::UnidentifiedNumericValue:
             if (i->type == TransliterationType::Numeric)
                 state = LexicalState::NumericValue1, lexicalTokens.back().type = LexicalType::ValueDecimalNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignDollar)
@@ -102,6 +102,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 state = LexicalState::NumericValue2, lexicalTokens.back().type = LexicalType::ValueFloatNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignSemicolon)
                 state = LexicalState::Finish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
+            else if (i->type == TransliterationType::SignWhiteSpace)
+                state = LexicalState::Semicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
@@ -112,6 +114,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 state = LexicalState::NumericValue2, lexicalTokens.back().type = LexicalType::ValueDecimalNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignSemicolon)
                 state = LexicalState::Finish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
+            else if (i->type == TransliterationType::SignWhiteSpace)
+                state = LexicalState::Semicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
@@ -120,6 +124,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 state = LexicalState::HexValue, lexicalTokens.back().type = LexicalType::ValueHexNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignSemicolon)
                 state = LexicalState::Finish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
+            else if (i->type == TransliterationType::SignWhiteSpace)
+                state = LexicalState::Semicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
@@ -128,6 +134,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 state = LexicalState::ExponentValue2, lexicalTokens.back().type = LexicalType::ValueExponentNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignSemicolon)
                 state = LexicalState::Finish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
+            else if (i->type == TransliterationType::SignWhiteSpace)
+                state = LexicalState::Semicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
@@ -136,6 +144,8 @@ vector<LexicalToken> LexicalUnit::Analize(vector<Atom> & sequence, SequenceStatu
                 state = LexicalState::ExponentValue2, lexicalTokens.back().type = LexicalType::ValueExponentNumber, lexicalTokens.back().value.push_back(i->symbol);
             else if (i->type == TransliterationType::SignSemicolon)
                 state = LexicalState::Finish, lexicalTokens.push_back(LexicalToken(i->symbol, LexicalType::Semicolon));
+            else if (i->type == TransliterationType::SignWhiteSpace)
+                state = LexicalState::Semicolon;
             else
                 status = SequenceStatus::Rejected;
             break;
